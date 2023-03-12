@@ -1,6 +1,6 @@
 <view class="swiper-container">
   <swiper class="swiper" bindchange="onChange">
-    <swiper-item wx:for="{{ list }}" wx:key="unique" class="swiper__item">
+    <swiper-item wx:for="{{ list }}" wx:key="unique" class="swiper__item" bindtap="onItemTap" data-item="{{ item }}">
       <image src="{{ item.image }}" mode="aspectFill"></image>
     </swiper-item>
   </swiper>

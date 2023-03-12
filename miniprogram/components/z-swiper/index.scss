@@ -1,7 +1,7 @@
 .swiper-container {
   position: relative;
   .swiper {
-    width: 100%;
+    width: 100vw;
     height: 632rpx;
     &__item {
       border-radius: 0 0 20rpx 20rpx;
@@ -15,7 +15,7 @@
   .dots {
     position: absolute;
     left: 40rpx;
-    bottom: 40rpx;
+    bottom: 60rpx;
     display: flex;
     &__item {
       width: 10rpx;

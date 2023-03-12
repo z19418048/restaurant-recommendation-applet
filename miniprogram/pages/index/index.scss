@@ -1,0 +1,63 @@
+@import '../styles/mixin.scss';
+
+.vip-card {
+  z-index: 1;
+  margin-top: -40rpx;
+  width: 688rpx;
+  height: 176rpx;
+  overflow: hidden;
+  @include cardStyle();
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  padding: 0 24rpx;
+  &__left-icon {
+    width: 100rpx;
+    height: 100rpx;
+  }
+
+  &__meta {
+    flex: 1;    
+    .title {
+      font-weight: bold;
+      font-size: 28rpx;
+      margin-bottom: 14rpx;
+    }
+    .description {
+      font-size: 22rpx;
+      color: var(--text-color);
+      margin-top: 14rpx;
+    }
+
+  }
+  &__coin {
+    display: flex;
+    flex-direction: column;
+    image {
+      width: 114rpx;
+      height: 74rpx;
+    }
+    text {
+      margin-left: 20rpx;
+    }
+  }
+}
+
+.menu-card {
+  @include cardStyle();
+  width: 690rpx;
+  height: 340rpx;
+  margin-top: 40rpx;
+}
+
+.icon-navigations {
+  margin-top: 40rpx;
+  width: 690rpx;
+  display: flex;
+  justify-content: space-between;
+  &__item {
+    width: 218rpx;
+    height: 160rpx;
+    @include cardStyle();
+  }
+}

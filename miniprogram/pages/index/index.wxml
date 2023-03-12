@@ -1,3 +1,27 @@
 <view class="page">
   <z-swiper list="{{ swiperList }}"></z-swiper>
+  <view class="vip-card">
+    <image class="vip-card__left-icon" src="../../assets/images/vip-pic.png"></image>
+    <view class="vip-card__meta">
+      <view class="title">微雪花雪花会员</view>
+      <van-progress color="#d32d15" percentage="50" show-pivot="{{ false }}" />
+      <view class="description">再升一级可享【升级礼包】等6项权限</view>
+    </view>
+    <view style="display: none;" class="vip-card__coin">
+      <image src="../../assets/images/coin.png"></image>
+      <text>32</text>
+    </view>
+    <view class="vip-card__button">
+      <van-button type="primary" size="small" bindtap="goToLogin">授权登录</van-button>
+    </view>
+  </view>
+
+  <image class="menu-card" src="../../assets/images/menu-card.jpg" bindtap="goToStore" >
+  </image>
+
+  <view class="icon-navigations">
+    <image class="icon-navigations__item" wx:for="{{ iconNavigations }}" wx:key="unique" src="{{item.image}}" bindtap="onIconNavigationTap" data-item="{{item}}">
+    </image>
+  </view>
+  
 </view>

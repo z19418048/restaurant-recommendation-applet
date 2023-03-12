@@ -1,5 +1,6 @@
-// components/y-swiper/index.ts
-import {SwiperData} from './types'
+// components/z-swiper/index.ts
+
+import navigator from "../../utils/navigator"
 
 Component({
   /**
@@ -28,6 +29,10 @@ Component({
       this.setData({
         current: event.detail.current
       })
+    },
+    onItemTap(event: ItemParam) {
+      const currentItem = event.currentTarget.dataset.item
+      navigator.to(currentItem.type, currentItem.target)
     }
   }
 })

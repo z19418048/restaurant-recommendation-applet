@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/store/index",
     "pages/order/index",
-    "pages/me/index"
+    "pages/me/index",
+    "pages/web-view/index"
   ],
   "tabBar": {
     "custom": true,

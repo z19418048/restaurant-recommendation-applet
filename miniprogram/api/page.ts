@@ -1,8 +1,8 @@
-import { SwiperData } from "../components/z-swiper/types"
 import request from "./request"
 
 type HomePageData = {
-  swiper: SwiperData[]
+  swiper: SwiperData[],
+  iconNavigations: IconNavigation[]
 }
 
 
