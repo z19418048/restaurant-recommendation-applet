@@ -1,0 +1,12 @@
+<view class="swiper-container">
+  <swiper class="swiper" bindchange="onChange">
+    <swiper-item wx:for="{{ list }}" wx:key="unique" class="swiper__item">
+      <image src="{{ item.image }}" mode="aspectFill"></image>
+    </swiper-item>
+  </swiper>
+  <view class="dots">
+    <view wx:for="{{ list }}" wx:key="unique" class="dots__item {{ current !== index || 'dots__item--active' }}">
+    </view>
+  </view>
+</view>
+

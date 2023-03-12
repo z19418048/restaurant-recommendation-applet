@@ -1,0 +1,15 @@
+view {
+  // custom var
+  --primary-color: #d32d15;
+
+  // vant var
+  --text-color: #787878;
+  
+  // vant tabbar
+  --tabbar-height: 90rpx;
+  --tabbar-item-text-color: var(--text-color);
+  --tabbar-item-active-color: var(--primary-color);
+
+  // reset 
+  box-sizing: border-box;
+}

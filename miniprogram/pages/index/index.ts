@@ -1,3 +1,6 @@
+import pageApi from "../../api/page"
+import { SwiperData } from "../../components/z-swiper/types"
+
 // pages/index/index.ts
 Page({
 
@@ -5,14 +8,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    swiperList: <SwiperData[]>[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-
+  async onLoad() {
+    const { swiper } = await pageApi.home()
+    this.setData({
+      swiperList: swiper
+    })
   },
 
   /**
@@ -26,7 +32,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.getTabBar().init()
   },
 
   /**
