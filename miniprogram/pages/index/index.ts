@@ -1,9 +1,10 @@
 import pageApi from "../../api/page"
+import { storeBehavior } from "../../behavior/storeBehavior"
 import navigator from "../../utils/navigator"
 
 // pages/index/index.ts
 Page({
-
+  behaviors:[storeBehavior],
   /**
    * 页面的初始数据
    */

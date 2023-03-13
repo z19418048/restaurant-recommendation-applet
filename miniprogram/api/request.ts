@@ -1,14 +1,5 @@
-
-type RequetMethod = "OPTIONS" | "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "TRACE" | "CONNECT" | undefined
-
 const BASER_URL = 'https://mock.apifox.cn/m1/1646135-0-default'
-
-type ErrorResponse = {
-  code: number;
-  message: string;
-}
-
-const request = <T>(method: RequetMethod, uri: string): Promise<T> => {
+const request = <T>(method: RequetMethod, uri: string, data?: RequestData): Promise<T> => {
   return new Promise((resolve, reject) => {
       wx.request({
         method,

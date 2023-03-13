@@ -4,7 +4,8 @@
     "pages/store/index",
     "pages/order/index",
     "pages/me/index",
-    "pages/web-view/index"
+    "pages/web-view/index",
+    "pages/login/index"
   ],
   "tabBar": {
     "custom": true,
@@ -23,7 +24,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "餐厅小程序",
+    "navigationBarTitleText": "餐厅推荐小程序",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },

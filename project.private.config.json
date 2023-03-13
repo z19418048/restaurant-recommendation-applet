@@ -5,5 +5,25 @@
     "compileHotReLoad": true,
     "urlCheck": false
   },
-  "libVersion": "2.26.0"
+  "libVersion": "2.26.0",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "登录页面",
+          "pathName": "pages/login/index",
+          "query": "url=https%3A%2F%2Fbaidu.com",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "我的页面",
+          "pathName": "pages/me/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

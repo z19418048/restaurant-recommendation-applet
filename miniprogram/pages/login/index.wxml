@@ -1,2 +1,10 @@
-<!--pages/login/index.wxml-->
-<text>pages/login/index.wxml</text>
+<view class="page">
+  <image class="logo" src="../../assets/images/logo.png"></image>
+  <view class="mark">餐厅推荐小程序</view>
+  <view class="intro">成为会员，立享更多优惠福利</view>
+  <view class="tips">授权绑定手机号 为您提供更好的服务</view>
+  <view class="login-btn">
+    <van-button type="primary" open-type="getPhoneNumber" bindgetphonenumber="login" block>一键登录</van-button>
+  </view>
+  <view class="cancel">取消</view>
+</view>
