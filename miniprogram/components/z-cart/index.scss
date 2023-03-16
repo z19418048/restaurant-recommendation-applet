@@ -1,0 +1,29 @@
+/* components/z-cart/index.wxss */
+.cart {
+  height: 180rpx;
+  width: 100%;
+  border-top: solid #f1f1f1 1rpx;
+  display: flex;
+  align-items: center;
+  gap: 32rpx;
+  padding: 0 30rpx;
+  padding-bottom:  env(safe-area-inset-bottom);
+  &__icon {
+    color: var(--primary-color);
+  }
+  &__total-price {
+    flex: 1;
+    display: flex;
+    font-size: 20rpx;
+    align-items: baseline;
+    .price {
+      font-size: 40rpx;
+      font-weight: bold;
+      margin-left: 14rpx;
+      &::before {
+        content: '￥';
+        font-size: 20rpx;
+      }
+    }
+  }
+}

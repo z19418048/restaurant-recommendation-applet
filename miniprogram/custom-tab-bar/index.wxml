@@ -1,6 +1,7 @@
 <van-tabbar
-  active="{{ active }}"
+  active="{{ app.activeTabbar }}"
   bind:change="onChange"
+  style="{{ show || 'display: none;' }}"
 >
   <van-tabbar-item wx:for="{{ list }}" wx:key="index"   bind:change="onChange">
     <image slot="icon" src="{{ item.image }}" style="width: 37rpx; height: 37rpx" mode="aspectFill"></image>

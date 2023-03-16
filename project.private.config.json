@@ -1,6 +1,6 @@
 {
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "projectname": "restaurant-recommendation-applet",
+  "projectname": "mixue-mp",
   "setting": {
     "compileHotReLoad": true,
     "urlCheck": false
@@ -12,13 +12,41 @@
         {
           "name": "登录页面",
           "pathName": "pages/login/index",
-          "query": "url=https%3A%2F%2Fbaidu.com",
+          "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "我的页面",
           "pathName": "pages/me/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "个人信息修改",
+          "pathName": "pages/me/settings",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "门店列表",
+          "pathName": "pages/store/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "店铺-菜单页面",
+          "pathName": "pages/store/menu",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "订单页面",
+          "pathName": "pages/order/index",
           "query": "",
           "launchMode": "default",
           "scene": null

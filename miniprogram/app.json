@@ -2,29 +2,45 @@
   "pages": [
     "pages/index/index",
     "pages/store/index",
+    "pages/store/menu",
     "pages/order/index",
     "pages/me/index",
     "pages/web-view/index",
-    "pages/login/index"
+    "pages/login/index",
+    "pages/me/settings"
   ],
   "tabBar": {
     "custom": true,
-    "list": [{
-      "pagePath": "pages/index/index"
-    },{
-      "pagePath": "pages/store/index"
-    },
-    {
-      "pagePath": "pages/order/index"
-    },
-    {
-      "pagePath": "pages/me/index"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/store/index"
+      },
+      {
+        "pagePath": "pages/order/index"
+      },
+      {
+        "pagePath": "pages/me/index"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于给您匹配最佳门店"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "usingComponents": {
+    "van-loading": "@vant/weapp/loading/index"
   },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "餐厅推荐小程序",
+    "navigationBarTitleText": "蜜雪冰城",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },

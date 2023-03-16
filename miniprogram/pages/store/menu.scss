@@ -1,0 +1,45 @@
+/* pages/store/menu.wxss */
+.page {
+  align-items: stretch;
+  height: 100vh;
+  padding-bottom: 0;
+  background-color: white;
+  .navigation-bar {
+    overflow: hidden;
+    &__left {
+      display: flex;
+      .icon {
+        font-size: 40rpx;
+        margin-right: 24rpx;
+      }
+      .search {
+        width: 440rpx;
+      }
+    }
+  }
+  .header {
+    padding: 40rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+    .store-info {
+      &__name {
+        font-size: 30rpx;
+        font-weight: bold;
+        margin-bottom: 10rpx;
+      }
+      &__distance {
+        font-size: 20rpx;
+        color: var(--text-color);
+        text {
+          color: var(--primary-color);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .store-menu {
+    height: 100%;
+    overflow: hidden;
+  }
+}

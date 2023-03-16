@@ -1,0 +1,121 @@
+/* components/z-product-card/index.wxss */
+.product-card {
+  padding: 30rpx;
+  width: 641rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 34rpx;
+  .header {
+    display: flex;
+    gap: 22rpx;
+    &__image {
+      width: 210rpx;
+      height: 210rpx;
+    }
+    &__meta {
+      flex: 1;
+      .name {
+        font-size: 30rpx;
+        font-weight: bold;
+        margin-bottom: 12rpx;
+      }
+      .description {
+        font-size: 20rpx;
+        color: var(--text-color);
+      }
+    }
+  }
+
+
+  .attributes {
+    display: flex;
+    flex-direction: column;
+    gap: 30rpx;
+    max-height: 700rpx;
+    overflow: scroll;
+    .attribute-chooser {
+      &__label {
+        font-size: 30rpx;
+        color: var(--text-color);
+        margin-bottom: 20rpx;
+      }
+      &__options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24rpx;
+
+        .option {
+          padding: 10rpx 14rpx;
+          border: 1rpx solid #f1f1f1;
+          border-radius: 10rpx;
+          display: flex;
+          align-items: center;
+          gap: 24rpx;
+          font-size: 24rpx;
+          color: var(--text-color);
+          position: relative;
+
+          &__minus, &__plus {
+            width: 40rpx;
+            height: 40rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: bold;
+          }
+          &__minus {
+            border: 1rpx solid var(--text-color);
+          }
+
+          &__plus {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1rpx solid var(--primary-color);
+          }
+
+          &--choosen {
+            background-color: #fef7f8;
+            border-color: #f5c1c6;
+            color: var(--primary-color);
+
+          }
+
+          .dot {
+            top: -15rpx;
+            right: -20rpx;
+            position: absolute;
+            color: white;
+            background-color: red;
+            z-index: 1;
+            padding: 0 8rpx;
+            border-radius: 20rpx;
+          }
+        }
+
+        &.single {
+          justify-content: space-between;
+          .option {
+            width: 168rpx;
+            justify-content: center;
+          }
+        }
+
+      }
+    }
+  }
+
+  .action-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .price {
+      font-size: 32rpx;
+      font-weight: bold;
+      &::before {
+        content: '￥';
+        font-size: 20rpx;
+      }
+    }
+  }
+}

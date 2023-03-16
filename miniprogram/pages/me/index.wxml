@@ -1,2 +1,54 @@
-<!--pages/me/index.wxml-->
-<text>pages/me/index.wxml</text>
+<wxs src="../../wxs/utils.wxs" module="utils" />
+<view class="page" style="padding-top: {{ paddingTop }}px;">
+  <view class="user-section">
+    <image class="user-section__avatar" src="../../assets/images/zlong.jpg" bindtap="goToSettings"></image>
+    <view wx:if="{{ app.currentUser }}" class="user-section__info" bindtap="goToSettings">{{ utils.desensize(app.currentUser.mobile) }}</view>
+
+    <block wx:if="{{ !app.currentUser }}" >
+      <view class="user-section__info" >登录获得更多会员权益</view>
+      <van-button type="primary" size="small" bindtap="goToLogin">授权登录</van-button>
+    </block>
+
+  </view>
+  <view class="info-card-section">
+    <view class="info-card">
+      <view class="info-card__meta">
+        <view class="number">
+          ***
+        </view>
+        <view class="unit">
+          积分
+        </view>
+      </view>
+      <image class="info-card__icon" src="../../assets/images/me-coin.png"></image>
+    </view>
+    <view class="info-card">
+      <view class="info-card__meta">
+        <view class="number">
+          ***
+        </view>
+        <view class="unit">
+          优惠券
+        </view>
+      </view>
+      <image class="info-card__icon" src="../../assets/images/me-coupon.png"></image>
+    </view>
+  </view>
+  <view class="menu-section">
+    <van-cell-group>
+      <van-cell wx:for="{{ menuList }}" wx:key="unique"  size="large" title="{{ item.title }}"  is-link border="{{ false }}">
+        <van-icon slot="icon" name="{{ item.icon }}" custom-class="menu-section__icon" />
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <view class="menu-section">
+    <van-cell-group>
+      <van-cell title="XX APP" value="下载体验" is-link>
+        <image slot="icon" class="menu-section__icon" src="../../assets/images/zlong.jpg"></image>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <view class="version">
+    版本号：1.0.0
+  </view>
+</view>

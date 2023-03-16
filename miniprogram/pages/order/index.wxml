@@ -1,2 +1,31 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view class="page" style="margin-top: {{paddingTop}}px;">
+  <view class="header-section">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="全部">
+        <image class="header-serction__image" src="../../assets/images/order-none.png">
+        </image>
+        <view class="header-section__info">您还没有订单，快去选择喜欢的菜品吧~</view>
+        <view class="header-section__btn">
+          <van-button type="danger">去喝一杯</van-button>
+        </view>
+      </van-tab>
+      <van-tab title="历史">
+        <image class="header-serction__image" src="../../assets/images/order-none.png">
+        </image>
+        <view class="header-section__info">您还没有订单，快去选择喜欢的菜品吧~</view>
+        <view class="header-section__btn">
+          <van-button type="danger">去喝一杯</van-button>
+        </view>
+      </van-tab>
+      <van-tab title="退单">
+        <image class="header-serction__image" src="../../assets/images/order-none.png">
+        </image>
+        <view class="header-section__info">您还没有订单，快去选择喜欢的菜品吧~</view>
+        <view class="header-section__btn">
+          <van-button type="danger">去喝一杯</van-button>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+
+</view>

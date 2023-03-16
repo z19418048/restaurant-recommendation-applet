@@ -1,0 +1,25 @@
+<view class="page">
+  <van-nav-bar custom-class="navigation-bar">
+    <view class="navigation-bar__left" slot="left">
+      <van-icon custom-class="icon" name="arrow-left"></van-icon>
+      <van-search custom-class="search" value="{{ value }}" placeholder="请输入商品名" shape="round" />
+    </view>
+  </van-nav-bar>
+  <view class="header">
+    <view class="store-info">
+      <view class="store-info__name">
+        蜜雪冰城(潘水店)
+        <van-icon name="arrow-right"></van-icon>
+      </view>
+      <view class="store-info__distance">
+        <van-icon name="location-o"></van-icon>
+        距离您
+        <text>2.0km</text>
+      </view>
+    </view>
+    <van-button type="primary" size="small">自提</van-button>
+  </view>
+  <z-store-menu wx:if="{{ menuList.length }}" class="store-menu" menuList="{{ menuList }}"></z-store-menu>
+  <z-cart></z-cart>
+  <z-product-card></z-product-card>
+</view>

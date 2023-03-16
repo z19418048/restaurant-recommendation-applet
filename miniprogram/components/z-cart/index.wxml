@@ -1,0 +1,7 @@
+<view class="cart">
+  <van-icon custom-class="cart__icon" size="40" info="{{ cart.total}}" name="shopping-cart-o" />
+  <view class="cart__total-price">
+    合计: <view class="price">{{ cart.totalPrice }}</view>
+  </view>
+  <van-button type="primary">去结算</van-button>
+</view>

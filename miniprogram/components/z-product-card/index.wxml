@@ -1,0 +1,56 @@
+<van-popup show="{{ false }}" round>
+  <view class="product-card">
+    <view class="header">
+      <image class="header__image" src="../../assets/images/product-image.png"></image>
+      <view class="header__meta">
+        <view class="name">棒打鲜橙</view>
+        <view class="description">现捣鲜橙超给力，一杯满满有维C</view>
+      </view>
+    </view>
+    <view class="attributes">
+      <view class="attribute-chooser">
+        <view class="attribute-chooser__label">
+          加料
+        </view>
+        <view class="attribute-chooser__options">
+          <view class="option">
+            <van-icon custom-class="option__minus" name="minus"></van-icon>
+            乳酸菌冻 ￥1
+            <van-icon custom-class="option__plus" name="plus"></van-icon>
+          </view>
+          <view class="option option--choosen">
+            <view class="dot">2</view>
+            <van-icon custom-class="option__minus" name="minus"></van-icon>
+            西柚粒 ￥2
+            <van-icon custom-class="option__plus" name="plus"></van-icon>
+          </view>
+          <view class="option">
+            <van-icon custom-class="option__minus" name="minus"></van-icon>
+             脆啵啵 ￥1
+            <van-icon custom-class="option__plus" name="plus"></van-icon>
+          </view>
+        </view>
+      </view>
+      <view class="attribute-chooser">
+        <view class="attribute-chooser__label">
+          温度
+        </view>
+        <view class="attribute-chooser__options single">
+          <view class="option option--choosen">
+            常温
+          </view>
+          <view class="option">
+            加冰
+          </view>
+          <view class="option">
+             去冰
+         </view>
+        </view>
+      </view>
+    </view>
+    <view class="action-area">
+      <view class="price">6</view>
+      <van-button type="primary">加入购物车</van-button>
+    </view>
+  </view>
+</van-popup>

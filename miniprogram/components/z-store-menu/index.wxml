@@ -1,0 +1,33 @@
+<view class="menu-content">
+  <view class="side-bar">
+    <view  wx:for="{{ menuList }}" wx:key="unique" class="side-bar__item {{ selectedSectionIndex === index && 'side-bar__item--active' }}" bindtap="onSectionTap" data-index="{{ index }}">
+      <image class="icon" src="{{ item.icon }}"></image>
+      <view class="title">{{ item.name }}</view>
+    </view>
+  </view>
+  <scroll-view class="menu-list" scroll-with-animation	 scroll-y scroll-into-view="section-title-{{ scrollIntoIndex }}" bindscroll="onScroll">
+    <view class="section" wx:for="{{ menuList }}" wx:key="unique">
+      <view class="section__title  {{ selectedSectionIndex === index && 'section__title--sticky' }}" id="section-title-{{ index }}">
+        {{ item.name }}
+      </view>
+      <view class="section__content">
+        <view class="product-card" wx:for="{{ item.products }}" wx:key="unique">
+          <image class="product-card__photo" src="../../assets/images/product-image.png">
+          </image>
+          <view class="product-card__info">
+            <view class="name">大王奇异果</view>
+            <view class="description">水果之光，VC之光</view>
+            <view class="bottom-section">
+              <view class="price">
+                9
+              </view>
+              <view class="add-btn">
+                <van-icon custom-class="add-btn__icon" name="plus" bindtap="addCart"></van-icon>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,39 @@
+/* components/z-store-popup/index.wxss */
+.store-detail {
+  &__content {
+    width: 100%;
+    padding: 20rpx 32rpx;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 25rpx;
+      &__meta {
+        .title {
+          font-size: 30rpx;
+          font-weight: bold;
+          margin-bottom: 8rpx;
+        }
+        .address {
+          font-size: 20rpx;
+          color: var(--text-color);
+        }
+      }
+      &__location {
+        font-size: 20rpx;
+        display: flex;
+        color: var(--text-color);
+        .distance {
+          margin-left: 4rpx;
+          color: var(--primary-color);
+          font-weight: bold;
+        }
+      }
+    }
+    .map {
+      width: 100%;
+      height: 400rpx;
+      margin-bottom: 20rpx;
+    }
+  }
+}

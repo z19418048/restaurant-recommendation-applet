@@ -1,0 +1,40 @@
+<wxs src="../../wxs/utils.wxs" module="utils" />
+
+<view class="page">
+  <view class="header-section">
+    <image class="avatar" src="../../assets/images/logo.JPG"></image>
+  </view>
+  <view class="form-section">
+    <van-field label="手机">
+      <van-button slot="button" size="small" plain hairline type="primary" open-type="getPhoneNumber" bindgetphonenumber="onMobileChange">修改</van-button>
+      <view class="input" slot="input">{{ utils.desensize(mobile) }}</view>
+    </van-field>
+
+    <van-field label="性别">
+      <van-radio-group value="{{ gender }}" slot="input" direction="horizontal" bindchange="onGenderChange">
+        <van-radio name="MALE">男</van-radio>
+        <van-radio name="FEMALE">女</van-radio>
+        <van-radio name="SECRET">秘密</van-radio>
+      </van-radio-group>
+    </van-field>
+
+    <van-field label="生日">
+      <picker slot="input" mode="date" value="{{birthDay}}" bindchange="onBirthDayChange">
+        <view class="tips" wx:if="{{!birthDay}}">(仅支持修改一次)</view>
+        <view class="picker" wx:if="{{birthDay}}">
+          {{birthDay}}
+        </view>
+      </picker>
+    </van-field>
+    <view class="notice">
+      根据未成年人保护相关法律法规的要求，我们不主动处理14周岁以下未成年人的个人信息。如果您为14周岁以下的用户，请勿填写您的个人资料。
+    </view>
+    <view class="save-btn">
+      <van-button type="primary" block bindtap="save" loading="{{loading}}">保存</van-button>
+    </view>
+  </view>
+
+  <view class="logout-btn" bindtap="handleLogout">
+    退出登录
+  </view>
+</view>

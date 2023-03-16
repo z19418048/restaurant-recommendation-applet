@@ -1,2 +1,34 @@
-<!--pages/store/index.wxml-->
-<text>pages/store/index.wxml</text>
+<view class="page">
+  <view class="header-section">
+    <van-tabs active="{{ active }}" bind:change="onChange">
+      <van-tab title="附近门店"></van-tab>
+      <van-tab title="常去门店"></van-tab>
+    </van-tabs>
+    <van-search bindtap="goToChooseLocation" custom-class="search" value="{{ value }}" placeholder="搜索门店" shape="round" />
+  </view>
+  <view class="map-section">
+    <map id="store-map" class="map {{ showMap || 'map--hidden' }} " show-location latitude="{{ currentLocation.latitude }}" longitude="{{ currentLocation.longitude }}" markers="{{ markers }}">
+      <image class="map__current-location" src="../../assets/images/current.png" bindtap="goToCurrentLocation"></image>
+    </map>
+    <view class="toggle-map" bindtap="toggleMap">{{ showMap ? '收起地图' : '展开地图' }}
+      <van-icon style="margin-left: 10rpx;" name="{{ showMap ? 'arrow-up' : 'arrow-down' }}" />
+    </view>
+  </view>
+  <view class="store-list-section">
+    <view wx:for="{{ storeList }}" wx:key="unique" class="store-card" bindtap="selectStore" data-store="{{ item }}">
+      <view class="store-card__meta">
+        <view class="name">{{ item.name }}</view>
+        <view class="address">{{ item.address }}</view>
+        <view class="opening-time">营业时间: {{ item.openingTime.start }} ~ {{ item.openingTime.end }} </view>
+        <van-tag type="primary">{{ storeStatusDict[item.status] }}</van-tag>
+      </view>
+      <view class="store-card__actions">
+        <view class="distance">
+          距离{{ item.distance }}km
+        </view>
+      </view>
+    </view>
+    <van-loading wx:for="{{ !storeList.length }}" vertical custom-class="loading" type="spinner">加载中...</van-loading>
+  </view>
+  <z-store-popup store="{{selectedStore}}" bind:close="handleStorePopupClose" markers="{{ markers }}"></z-store-popup>
+</view>

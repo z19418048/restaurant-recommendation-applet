@@ -1,8 +1,10 @@
 // custom-tab-bar/index.ts
+import { storeBehavior } from '../behavior/storeBehavior';
 import {ErrorMessage} from '../enums/ErrorMessage'
+import { appStore } from '../store/index';
 Component({
+  behaviors: [storeBehavior],
   data: {
-    active: 0,
     list: [
       {
         text: '首页',
@@ -28,7 +30,8 @@ Component({
         selectedImage: '../assets/images/tabbar/me-selected.png',
         path: '/pages/me/index'
       }
-    ]
+    ],
+    show: true
   },
 
   /**
@@ -36,13 +39,12 @@ Component({
    */
   methods: {
     onChange(event: {detail: number}) {
-      this.setData({
-        active: event.detail
-      })
+      appStore.switchTabbar(event.detail)
 			wx.switchTab({
 				url: this.data.list[event.detail].path
       });
      },
+     // Todo: 优化
      init() {
        const currentPage = getCurrentPages().pop()
        if(!currentPage) {
@@ -53,6 +55,16 @@ Component({
            active: this.data.list.findIndex(item=>item.path === `/${currentPage.route}`)
          }
        )
+     },
+     show() {
+       this.setData({
+         show: true
+       })
+     },
+     hide() {
+       this.setData({
+         show: false
+       })
      }
   }
 })
