@@ -34,7 +34,7 @@ Page({
           title: item.name,
           latitude: item.location.latitude,
           longitude: item.location.longitude,
-          iconPath: '../../assets/images/logo.JPG',
+          iconPath: '../../assets/images/zlong.jpg',
           width: '55rpx',
           height: '55rpx'
         }

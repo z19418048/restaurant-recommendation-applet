@@ -8,8 +8,8 @@
     <view class="store-detail__content">
       <view class="header">
         <view class="header__meta">
-          <view class="title">{{ store.name }}</view>
-          <view class="address">{{ store.address }}</view>
+          <view class="title">zlong餐厅</view>
+          <view class="address">新建区</view>
         </view>
         <view class="header__location">
         距离

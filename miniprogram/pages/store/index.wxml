@@ -17,8 +17,8 @@
   <view class="store-list-section">
     <view wx:for="{{ storeList }}" wx:key="unique" class="store-card" bindtap="selectStore" data-store="{{ item }}">
       <view class="store-card__meta">
-        <view class="name">{{ item.name }}</view>
-        <view class="address">{{ item.address }}</view>
+        <view class="name">zlong餐厅</view>
+        <view class="address">杭州市萧山区</view>
         <view class="opening-time">营业时间: {{ item.openingTime.start }} ~ {{ item.openingTime.end }} </view>
         <van-tag type="primary">{{ storeStatusDict[item.status] }}</van-tag>
       </view>

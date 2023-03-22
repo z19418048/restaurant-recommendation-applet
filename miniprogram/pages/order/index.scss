@@ -2,7 +2,19 @@
 .page{
   .header-section{
     width: 100%;
-    
+    &__image{
+      width: 690rpx;
+      background-position: center;
+    }
+    &__info{
+      text-align: center;
+      margin-top: 30rpx;
+      color: var(--text-color);
+    }
+    &__btn{
+      text-align: center;
+      margin-top: 80rpx;
+      border-radius: 50%;
+    }
   }
-
 }

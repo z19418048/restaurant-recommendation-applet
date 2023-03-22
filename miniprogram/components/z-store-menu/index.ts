@@ -1,6 +1,6 @@
 import { cartStore } from "../../store/index"
 
-// components/z-store-menu/index.ts
+// components/z-store-menu/index.tsr
 Component({
   /**
    * 组件的属性列表
@@ -8,10 +8,13 @@ Component({
   properties: {
     menuList: {
       type: Array,
-      value: <CategoryWithProduct[]> []
+      value: <CategoryWithProduct[]>[]
+    },
+    localMenuList:{
+      type:Array,
+      value:<LocalCategoryWithProduct[]>[]
     }
   },
-
   /**
    * 组件的初始数据
    */
@@ -22,10 +25,10 @@ Component({
   },
 
   lifetimes: {
-    attached(){
-      this.createSelectorQuery().selectAll('.section__title').boundingClientRect(rect=>{
+    attached() {
+      this.createSelectorQuery().selectAll('.section__title').boundingClientRect(rect => {
         // @ts-ignore
-        const titleOffsets = rect.map(item=>{
+        const titleOffsets = rect.map(item => {
           return item.top
         })
         this.setData({
@@ -39,16 +42,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onSectionTap(event: DataSetEvent<{index: number}>) {
-      const {index} = event.currentTarget.dataset
+    onSectionTap(event: DataSetEvent<{ index: number }>) {
+      const { index } = event.currentTarget.dataset
       this.setData({
-        selectedSectionIndex:index,
+        selectedSectionIndex: index,
         scrollIntoIndex: index
       })
     },
     onScroll(event: WechatMiniprogram.ScrollViewScroll) {
       const offset = event.detail.scrollTop + event.target.offsetTop
-      const index = this.data.titleOffsets.findIndex((item, index)=>{
+      const index = this.data.titleOffsets.findIndex((item, index) => {
         return (item <= offset && this.data.titleOffsets[index + 1] > offset)
       })
       index !== -1 && index !== this.data.selectedSectionIndex && this.setData({
@@ -69,7 +72,7 @@ Component({
             value: '加奶盖',
             price: 2
           },
-           {
+          {
             id: '12',
             key: 'test',
             value: '加奶昔',

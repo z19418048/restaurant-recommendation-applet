@@ -1,3 +1,4 @@
+import localStoreApi from "../../api/localStore"
 import storeApi from "../../api/store"
 
 // pages/store/menu.ts
@@ -7,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    menuList: <CategoryWithProduct[]>[]
+    menuList: <CategoryWithProduct[]>[],
   },
 
   /**
@@ -15,11 +16,31 @@ Page({
    */
   async onLoad() {
     const menuList = await storeApi.menu('11')
+    const recommend = await localStoreApi.localMenu(1)
+    const dish = await localStoreApi.localMenu(2)
+    const vegetable = await localStoreApi.localMenu(3)
+    const principle = await localStoreApi.localMenu(4)
+    const rice = await localStoreApi.localMenu(5)
+    const recommendRes = recommend.resultObject
+    const dishRes = dish.resultObject
+    const vegetableRes = vegetable.resultObject
+    const principleRes = principle.resultObject
+    const riceRes = rice.resultObject
+    const localMenuList = [
+      {icon:"/assets/images/zlong.jpg",id:1,name:"推荐",products:recommendRes},
+      {icon:"/assets/images/zlong.jpg",id:2,name:"炒菜",products:dishRes},
+      {icon:"/assets/images/zlong.jpg",id:3,name:"蔬菜",products:vegetableRes},
+      {icon:"/assets/images/zlong.jpg",id:4,name:"主食",products:principleRes},
+      {icon:"/assets/images/zlong.jpg",id:5,name:"米饭",products:riceRes}
+    ]
     this.setData({
-      menuList
+      menuList,
+      localMenuList
     })
   },
-
+  goToStoreIndex(){
+    wx.switchTab({url: '/pages/store/index'})
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

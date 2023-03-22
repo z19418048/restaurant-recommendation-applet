@@ -25,8 +25,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onChange(event: {detail: {current: number}}) {
-      this.setData({
+    onChange(event: {detail: {current: number}}) {      
+      this.setData({        
         current: event.detail.current
       })
     },
