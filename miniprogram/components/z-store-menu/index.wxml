@@ -1,25 +1,25 @@
 <view class="menu-content">
   <view class="side-bar">
-    <view wx:for="{{ localMenuList }}" wx:key="unique" class="side-bar__item {{ selectedSectionIndex === index && 'side-bar__item--active' }}" bindtap="onSectionTap" data-index="{{ index }}">
+    <view wx:for="{{ menuList }}" wx:key="unique" class="side-bar__item {{ selectedSectionIndex === index && 'side-bar__item--active' }}" bindtap="onSectionTap" data-index="{{ index }}">
       <image class="icon" src="{{ item.icon }}"></image>
       <view class="title">{{ item.name }}</view>
     </view>
   </view>
   <scroll-view class="menu-list" scroll-with-animation scroll-y scroll-into-view="section-title-{{ scrollIntoIndex }}" bindscroll="onScroll">
-    <view class="section" wx:for="{{ localMenuList }}" wx:key="unique">
+    <view class="section" wx:for="{{ menuList }}" wx:key="unique">
       <view class="section__title  {{ selectedSectionIndex === index && 'section__title--sticky' }}" id="section-title-{{ index }}">
         {{ item.name }}
       </view>
       <view class="section__content">
         <view class="product-card" wx:for="{{ item.products }}" wx:key="unique">
-          <image class="product-card__photo" src="/assets/images/restaurant/cook/cook_1.jpg">
+          <image class="product-card__photo" src="{{item.photo}}">
           </image>
           <view class="product-card__info">
-            <view class="name">辣椒炒肉</view>
-            <view class="description">下饭菜绝杀</view>
+            <view class="name">{{item.name}}</view>
+            <view class="description">{{item.description}}</view>
             <view class="bottom-section">
               <view class="price">
-                9
+                {{item.price}}
               </view>
               <view class="operate-btn">
                 <van-icon custom-class="operate-btn__icon" name="minus"></van-icon>
